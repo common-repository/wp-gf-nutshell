@@ -1,0 +1,42 @@
+{
+    "name": "gulo-solutions/gravityforms-nutshell-integration",
+    "description": "gravity forms and nutshell APIs integration",
+    "keywords": ["API", "gravityforms-nutshell-integration", "gravity forms", "nutshell"],
+    "version": "1.1.18",
+    "license": "MIT",
+    "type": "wordpress-plugin",
+    "repositories": [
+        {
+            "type":"package",
+            "package": {
+              "name": "nutshellcrm/nutshell-api-php",
+              "version":"master",
+              "source": {
+                  "url": "https://github.com/nutshellcrm/nutshell-api-php",
+                  "type": "git",
+                  "reference":"master"
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Models\\": "app/Models",
+            "Controllers\\": "app/Controllers",
+            "Nutshell\\": "vendor/nutshellcrm/nutshell-api-php"
+
+        },
+    "autoload": {
+            "classmap": [
+            "vendor/nutshellcrm/nutshell-api-php/NutshellApi.php"
+    ]
+},
+        "extra": {
+            "installer-paths": {
+                "./wp-content/plugins/{$name}/": [
+                    "type:wordpress-plugin"
+                    ]
+                }
+        }
+    }
+}
